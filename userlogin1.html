@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Welcome to complaint system</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        input[type=checkbox] {
+            /* Double-sized Checkboxes */
+            -ms-transform: scale(1.3); /* IE */
+            -moz-transform: scale(1.3); /* FF */
+            -webkit-transform: scale(1.3); /* Safari and Chrome */
+            -o-transform: scale(1.3); /* Opera */
+            transform: scale(1.3);
+            padding: 5px;
+        }
+        #back {
+            margin: 0px;
+            width: 100%;
+            height: 100%;
+            background: #87b1de;
+            position: absolute;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-white navbar-white">
+        <div class="nav-item" style="margin-left:5%">
+            <h2 onclick='window.open("index.html");' style="cursor:pointer">ದೂರು ನೋಂದಣಿ ವ್ಯವಸ್ಥೆ</h2>
+        </div>
+        <div class="nav-item">
+            <a class="nav-link" href="userlogin1.html">ಬಳಕೆದಾರ ಲಾಗಿನ್</a>
+        </div>
+        <div class="nav-item">
+            <a class="nav-link" href="userreg1.html">ಬಳಕೆದಾರ ನೋಂದಣಿ</a>
+        </div>
+        <div class="nav-item">
+            <a class="nav-link" href="adminlogin1.html">ನಿರ್ವಾಹಕ</a>
+        </div>
+    </nav>
+    <div id="back" style="margin:0px;"></div>
+    <div class="container" style="width:70%;margin-left:15%;position:relative; background:white;margin-top:20px;padding:10px;border-radius:10px;border:.5px solid black;box-shadow:1px 2px 3px 0px;">
+        <div class="heading" style="border-bottom:2px solid #329c92; text-align:center;">
+            <h3>ಬಳಕೆದಾರರಿಗೆ ಲಾಗ್ ಇನ್ ಮಾಡಿ</h3>
+        </div>
+        <div class="log">
+            <form class="container" action="userlogin2.php" method="POST"><br />
+                <input type="text" class="form-control" placeholder="ಬಳಕೆದಾರ ಹೆಸರು" name="username"><br />
+                <input type="password" class="form-control" placeholder="ಪಾಸ್ವರ್ಡ್" name="pass"><br />
+                <input type="checkbox" class="form-check-input" name="chk[]" style="margin-left:5px;">
+                <p style="margin-left:25px;">ನನ್ನನ್ನು ನೆನಪಿನಲ್ಲಿ ಇಡು.</p>
+                <input type="submit" class="form-control btn btn-primary" value="ಲಾಗಿನ್ ಮಾಡಿ"><br />
+            </form>
+            <a href="userreg1.html">ಅಥವಾ ಇಲ್ಲಿ ಸೈನ್ ಅಪ್ ಮಾಡಿ</a><hr />
+            <form>
+                <a href="index.html" class="form-control btn btn-light" style="width:auto"> ರದ್ದುಮಾಡಿ</a>
+                <input type="submit" style="width:auto;" class="form-control btn btn-light" value="ಪಾಸ್ವರ್ಡ್ ಮರುಹೊಂದಿಸಿ"><br />
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ದೂರು ವ್ಯವಸ್ಥೆಗೆ ಸ್ವಾಗತ</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <script>
+        function myfun() {
+            var guidebutton = document.getElementById("butn");
+            var guidelines = document.getElementById('guidelines');
+            if (guidebutton.value == "ಮಾರ್ಗಸೂಚಿಗಳನ್ನು ನೋಡಲು ಕ್ಲಿಕ್ ಮಾಡಿ") {
+                guidelines.style.display = 'block';
+                guidebutton.value = 'ಮಾರ್ಗಸೂಚಿಗಳನ್ನು ನೋಡಲು ಕ್ಲಿಕ್ ಮಾಡಿ';
+            } else if (guidebutton.value == "ಮಾರ್ಗಸೂಚಿಗಳನ್ನು ನೋಡಲು ಕ್ಲಿಕ್ ಮಾಡಿ") {
+                guidelines.style.display = 'none';
+                guidebutton.value = 'ಮಾರ್ಗಸೂಚಿಗಳನ್ನು ನೋಡಲು ಕ್ಲಿಕ್ ಮಾಡಿ';
+            }
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar-nav navbar-expand-sm bg-dark">
+        <div class="nav-item item1" style="margin-left:5%">
+            <h2 onclick='window.location.reload();' style="cursor:pointer">e-ದೂರು ನೋಂದಣಿ ವ್ಯವಸ್ಥೆ</h2>
+        </div>
+        <div class="nav-item items">
+            <a class="nav-link" href="userlogin1.html">ಬಳಕೆದಾರ ಲಾಗಿನ್</a>
+        </div>
+        <div class="nav-item items">
+            <a class="nav-link" href="userreg1.html">ಬಳಕೆದಾರ ನೋಂದಣಿ</a>
+        </div>
+        <div class="nav-item items">
+            <a class="nav-link" href="adminlogin1.html">ನಿರ್ವಾಹಕ</a>
+        </div>
+    </nav>
+    
+    <div id="demo" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="comp2.png" alt="Los Angeles" width="1100" height="500">
+            </div>
+            <div class="carousel-item">
+                <img src="comp.png.png" alt="Chicago" width="1100" height="500">
+            </div>
+            <div class="carousel-item">
+                <img src="background.png.png" alt="New York" width="1100" height="500">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+    
+    <div class="welcome container">
+        <h3>ಆನ್‌ಲೈನ್ ದೂರು ವ್ಯವಸ್ಥೆಗೆ ಸುಸ್ವಾಗತ</h3>
+        <div class="guide">
+            <input type="button" class="btn btn-light form-control" onClick="myfun()" id="butn" value="ಮಾರ್ಗಸೂಚಿಗಳನ್ನು ನೋಡಲು ಕ್ಲಿಕ್ ಮಾಡಿ">
+            <div id="guidelines" style="display:none">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item list-group-item-dark">
+                        ನೀವು ಮೊದಲು ದೂರು ನೀಡಲು ಬಯಸಿದರೆ ನೀವೇ ನೋಂದಾಯಿಸಿಕೊಳ್ಳಿ <a href="userreg1.html">ಬಳಕೆದಾರ ನೋಂದಣಿ</a>
+                    </li>
+                    <li class="list-group-item list-group-item-dark">
+                        ನೋಂದಣಿ ನಂತರ ಲಾಗಿನ್ ಮಾಡಿ <a href="userlogin1.html">ಬಳಕೆದಾರ ಲಾಗಿನ್</a>
+                    </li>
+                    <li class="list-group-item list-group-item-dark">
+                        ನಂತರ ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿಯನ್ನು ಹೊಂದಿಸಿ. ಮತ್ತು ದೂರು ವಿಭಾಗದಲ್ಲಿ ದೂರಿನ ಪ್ರಕಾರ ಮತ್ತು ಉಪ ಪ್ರಕಾರವನ್ನು ಆಯ್ಕೆಮಾಡಿ.
+                    </li>
+                    <li class="list-group-item list-group-item-dark">
+                        ನಿಮ್ಮ ದೂರನ್ನು ಬರೆದ ನಂತರ ನಿಮ್ಮ ದೂರನ್ನು ಸಲ್ಲಿಸಿ ಮತ್ತು ಅದರ ಪ್ರತಿಕ್ರಿಯೆಗಾಗಿ ಕಾಯಿರಿ.
+                    </li>
+                    <li class="list-group-item list-group-item-dark">
+                        ನಿಮ್ಮ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್‌ನಲ್ಲಿ ನಿಮ್ಮ ದೂರಿನ ಸ್ಥಿತಿಯನ್ನು ನೀವು ನೋಡಬಹುದು.
+                    </li>
+                    <li class="list-group-item list-group-item-dark">
+                        ನೀವು ಲಾಗ್‌ಔಟ್ ಮಾಡಲು ಬಯಸಿದರೆ ಮೇಲಿನ ಬಲ ಮೂಲೆಯಲ್ಲಿ ಲಾಗ್‌ಔಟ್ ಬಟನ್ ಇರುತ್ತದೆ.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br /><hr />
+    <div class="copyright">
+        <div class="footer-copyright text-center py-3">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item list-group-item-white">
+                    Ms.Megha.G
+                </li>
+                <li class="list-group-item list-group-item-white">
+                    Ms.Gangotri.H
+                </li>
+                <li class="list-group-item list-group-item-white">
+                    Ms.Preeti.S
+                </li>
+                <li class="list-group-item list-group-item-white">
+                    Mr.Timmanagouda.T
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

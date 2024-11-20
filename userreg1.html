@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="main.css">
+  <style>
+    .forumm #span {
+      display: inline-block;
+      width: 15%;
+    }
+    .forumm input {
+      display: inline-block;
+      width: 65%;
+    }
+    body {
+      background-image: url("ddd.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .container {
+      background: white;
+      margin-top: 10px;
+      border: 1px solid black;
+      border-radius: 10px;
+    }
+    .container h3 {
+      border-bottom: 2px solid #c0c0c0;
+      text-align: center;
+      padding-bottom: 7px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm bg-white">
+    <div class="navbar-nav ml-5">
+      <h2 class="nav-item" style="cursor: pointer;" onclick='window.open("index.html");'>ದೂರು ನೋಂದಣಿ ವ್ಯವಸ್ಥೆ</h2>
+      <a class="nav-item nav-link" href="userlogin1.html">ಬಳಕೆದಾರ ಲಾಗಿನ್</a>
+      <a class="nav-item nav-link" href="userreg1.html">ಬಳಕೆದಾರರ ನೋಂದಣಿ</a>
+      <a class="nav-item nav-link" href="adminlogin1.html">ನಿರ್ವಾಹಕ</a>
+    </div>
+  </nav>
+  <div class="container">
+    <h3>ಬಳಕೆದಾರರ ನೋಂದಣಿ</h3>
+    <form class="forumm" method="post" id="reg" action="userreg2.php" onsubmit="return myfun();">
+      <div id="span">ಮೊದಲ ಹೆಸರು</div><input class="form-control" type="text" id="fname" name="fname"><p id="chkfname" style="color:red;display:none;">*Fill First Name</p><br />
+      <div id="span">ಕೊನೆಯ ಹೆಸರು</div><input class="form-control" type="text" id="lname" name="lname"><p id="chklname" style="color:red;display:none;">*Fill Last Name</p><br />
+      <div id="span">ಬಳಕೆದಾರ ಹೆಸರು</div><input class="form-control" type="text" id="uname" name="username"><p id="chkuser" style="color:red;display:none;">*Fill user Name</p><br />
+      <div id="span">ಇಮೇಲ್</div><input name="email" class="form-control" type="email" id="mail"><p id="chkmail" >*Please enter a valid email</p><br />
+      <div id="span">ದೂರವಾಣಿ ಸಂಖ್ಯೆ</div><input class="form-control" type="text" id="pn" name="phone" maxlength="10" onblur="validatePhoneNumber()" required>
+<p id="chkpn" style="color: red; display: none;">*Please enter a 10-digit phone number</p><br />
+      <div id="span">ಲಿಂಗ</div>
+      <select style="width:40%;display:inline-block" class="form-control" name="gender">
+        <option>ಪುರುಷ</option>
+        <option>ಹೆಣ್ಣು</option>
+      </select><br />
+      <div id="span">ಪಾಸ್ ವರ್ಡ್</div>
+<input class="form-control" type="password" id="pass"><br />
+<div id="span">ಪಾಸ್ ವರ್ಡ್ ದೃಢಪಡಿಸಿ</div>
+<input name="pass" class="form-control" type="password" id="cpass">
+<p id="match">ಪಾಸ್ ವರ್ಡ್ ಹೊಂದಿಕೆಯಾಗಿದೆ.</p><br />
+		<hr /><button class="btn btn-danger" onclick="myfun()" name="btn" type="button" style="margin-left:33%;width:30%;">
+			ಸೈನ್ ಅಪ್ ಮಾಡಿ  <i style="font-size:16px" class="fa">&#xf054;</i></button>
+	</form>
+			
+				<hr /><button class="btn btn-light" onclick="window.location.reload()">ಎಲ್ಲವನ್ನೂ ತೆಗೆ</button>
+				<a class="btn btn-light" href="userlogin1.html">ಈಗಾಗಲೇ ಸೈನ್ ಅಪ್ ಮಾಡಿ!! ಇಲ್ಲಿ ಲಾಗಿನ್ ಮಾಡಿe</a>
+				<br /><hr />
+	</div>
+  <script>
+    function myfun() {
+      var ch1 = false, ch2 = false, ch3 = false, ch4 = false, ch5 = false, ch6 = false;
+
+      var uname = document.getElementById("uname").value;
+      var chkuname = document.getElementById("chkuser");
+      if (uname == "") {
+        chkuname.style.display = 'inline-block';
+      } else {
+        ch6 = true;
+        chkuname.style.display = 'none';
+      }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      var fname = document.getElementById("fname").value;
+      var chkfname = document.getElementById("chkfname");
+      var str = new RegExp(/[0-9]/);
+      var forfname = str.test(fname);
+      if (forfname) {
+        chkfname.innerHTML = "*Only alphabets allowed.";
+        chkfname.style.display = 'inline-block';
+      } else if (fname == "") {
+        chkfname.innerHTML = "*Fill First Name";
+        chkfname.style.display = 'inline-block';
+      } else {
+        ch1 = true;
+        chkfname.style.display = 'none';
+      }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      var lname = document.getElementById("lname").value;
+      var chklname = document.getElementById("chklname");
+      var str2 = new RegExp(/[0-9]/);
+      var forlname = str2.test(lname);
+      if (forlname) {
+        chklname.innerHTML = "*Only alphabets allowed.";
+        chklname.style.display = 'inline-block';
+      } else if (lname == "") {
+        chklname.innerHTML = "*Fill Last Name";
+        chklname.style.display = 'inline-block';
+      } else {
+        ch2 = true;
+        chklname.style.display = 'none';
+      }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+var pn = document.getElementById("pn").value;
+var chkpn = document.getElementById("chkpn");
+
+// Regular expression to check for exactly 10 alphanumeric characters
+var forpn = /^[a-zA-Z0-9]{10}$/;
+var isValidPhoneNumber = forpn.test(pn);
+
+if (pn === "") {
+    chkpn.innerHTML = "*Please fill in your phone number";
+    chkpn.style.display = 'inline-block';
+} else if (!isValidPhoneNumber) {
+    chkpn.innerHTML = "ದಯವಿಟ್ಟು 10 ಅಂಕಿಯ ಅಲ್ಫಾನ್ಯೂಮೆರಿಕ್ ಫೋನ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ (ಉದಾ., 0xxxyyyyyy ಅಥವಾ abcd1234ef)";
+    chkpn.style.display = 'inline-block';
+} else {
+    ch4 = true;
+    chkpn.style.display = 'none';
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+var pn = document.getElementById("pn").value;
+    var chkpn = document.getElementById("chkpn");
+    var forpn = /^\d{10}$/;
+    var isValidPhoneNumber = forpn.test(pn);
+
+    if (!isValidPhoneNumber) {
+        chkpn.innerHTML = "ದಯವಿಟ್ಟು 10 ಅಂಕಿಯ ಫೋನ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ (ಉದಾ., 0xxxyyyyyyy)";
+        chkpn.style.display = 'inline-block';
+    } else if (pn === "") {
+        chkpn.innerHTML = "*Please fill in your phone number";
+        chkpn.style.display = 'inline-block';
+    } else {
+        ch4 = true;
+        chkpn.style.display = 'none';
+    }
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+var pass = document.getElementById("pass").value;
+  var cpass = document.getElementById("cpass").value;
+  var spass = document.getElementById("match");
+  
+  // Assuming the other conditions are initialized somewhere
+  var ch1 = true; // Replace with actual condition
+  var ch2 = true; // Replace with actual condition
+  var ch3 = true; // Replace with actual condition
+  var ch4 = true; // Replace with actual condition
+  var ch5 = false;
+  var ch6 = true; // Replace with actual condition
+
+  if (pass === "") {
+    spass.innerHTML = "*Fill password";
+    spass.style.display = 'inline-block';
+    ch5 = false;
+  } else {
+    if (pass === cpass) {
+      ch5 = true;
+      spass.style.display = 'inline-block';
+      spass.innerHTML = "*Password matched";
+      spass.style.color = 'green';
+    } else {
+      ch5 = false;
+      spass.style.display = 'inline-block';
+      spass.innerHTML = "*Password NOT matched";
+      spass.style.color = 'red';
+    }
+  }
+
+  if (ch1 && ch2 && ch3 && ch4 && ch5 && ch6) {
+    document.getElementById("reg").submit();
+  }
+
+  return ch1 && ch2 && ch3 && ch4 && ch5 && ch6;
+}
+  </script>
+</body>
+</html>
